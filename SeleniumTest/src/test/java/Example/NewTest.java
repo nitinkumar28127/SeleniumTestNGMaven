@@ -1,7 +1,13 @@
 package Example;
 
 import org.testng.annotations.Test;
+
+import pageObjects.LoginPage;
+
 import org.testng.annotations.BeforeTest;
+
+import java.io.IOException;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -16,11 +22,13 @@ public class NewTest {
 		Assert.assertTrue(title.contains("Demo Guru99 Page"));
   }
   @BeforeTest
-  public void beforeTest() {
+  public void beforeTest() throws IOException {
 	  String path = System.getProperty("user.dir");
 	  System.out.println(path); 
 	  System.setProperty("webdriver.chrome.driver",path+"\\resources\\chromedriver.exe");
 	  driver = new ChromeDriver();
+	  LoginPage login=new LoginPage(driver);
+	  LoginPage.txtbx_UserName();
   }
 
   @AfterTest
