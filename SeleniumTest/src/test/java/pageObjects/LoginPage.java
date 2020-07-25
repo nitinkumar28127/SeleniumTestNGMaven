@@ -26,7 +26,6 @@ public class LoginPage extends PageBase {
 		System.out.println(properties.getProperty("txtbx_UserName"));
 		element = driver.findElement(By.id(properties.getProperty("txtbx_UserName")));
 		return element;
-
 	}
 
 	public static WebElement txtbx_Password() {
