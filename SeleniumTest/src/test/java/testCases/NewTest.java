@@ -7,6 +7,7 @@ import pageObjects.LoginPage;
 import org.testng.annotations.BeforeTest;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -22,6 +23,7 @@ public class NewTest {
 		System.out.println(path);
 		System.setProperty("webdriver.chrome.driver", path + "\\resources\\chromedriver.exe");
 		driver = new ChromeDriver();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		LoginPage login = new LoginPage(driver);
 	
 	}
@@ -32,11 +34,12 @@ public class NewTest {
 	}
 
 	@Test
-	public void testEasy() {
+	public void ValidateUnAuthorizeMessage() {
 		driver.get("http://demo.guru99.com/insurance/v1/index.php");
 		LoginPage.txtbx_UserName().sendKeys("admin");
 		LoginPage.txtbx_Password().sendKeys("admin");
 		LoginPage.btn_LogIn().click();
+		
 	}
 
 }
