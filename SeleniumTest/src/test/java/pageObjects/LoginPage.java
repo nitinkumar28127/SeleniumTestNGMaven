@@ -24,19 +24,19 @@ public class LoginPage extends PageBase {
 	public static WebElement txtbx_UserName() {
 
 		System.out.println(properties.getProperty("txtbx_UserName"));
-		element = driver.findElement(By.id(properties.getProperty("txtbx_UserName")));
+		element = driver.findElement(By.xpath(properties.getProperty("txtbx_UserName")));
 		return element;
 	}
 
 	public static WebElement txtbx_Password() {
 
-		element = driver.findElement(By.id(properties.getProperty("txtbx_Password")));
+		element = driver.findElement(By.xpath(properties.getProperty("txtbx_Password")));
 		return element;
 	}
 
 	public static WebElement btn_LogIn() {
 
-		element = driver.findElement(By.id(properties.getProperty("btn_LogIn")));
+		element = driver.findElement(By.xpath(properties.getProperty("btn_LogIn")));
 		return element;
 	}
 }
